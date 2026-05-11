@@ -1,0 +1,1080 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="UTF-8">
+<title>Alberatura Sito Custom — Impresa Turlione</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;500;600;700;800;900&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Inter', Arial, sans-serif;
+    color: #1A1F3A;
+    background: #F5F5F7;
+    line-height: 1.5;
+    padding: 40px 20px;
+  }
+  .container { max-width: 1320px; margin: 0 auto; }
+
+  /* Page Header */
+  .page-header {
+    background: linear-gradient(135deg, #152E82 0%, #0E1F5A 100%);
+    color: white;
+    padding: 60px 50px;
+    border-radius: 16px;
+    margin-bottom: 40px;
+    box-shadow: 0 8px 30px rgba(21, 46, 130, 0.15);
+  }
+  .page-header .label {
+    display: inline-block;
+    background: #DE051D;
+    color: white;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    padding: 6px 14px;
+    border-radius: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase;
+  }
+  .page-header h1 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 64px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -1px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+  .page-header .sub { font-size: 18px; opacity: 0.85; font-weight: 300; }
+  .page-header .lead {
+    margin-top: 20px;
+    font-size: 16px;
+    line-height: 1.7;
+    opacity: 0.9;
+    max-width: 900px;
+  }
+
+  /* Section wrapper */
+  .section {
+    background: white;
+    border-radius: 14px;
+    padding: 50px 50px 60px;
+    margin-bottom: 28px;
+    box-shadow: 0 2px 12px rgba(0,0,0,0.04);
+  }
+  .section-title {
+    font-family: 'Barlow Condensed', sans-serif;
+    color: #152E82;
+    font-size: 36px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+  .section-lead {
+    color: #555;
+    font-size: 15px;
+    margin-bottom: 40px;
+    line-height: 1.7;
+    max-width: 900px;
+  }
+  .section-lead strong { color: #152E82; }
+
+  /* ===== SITEMAP DIAGRAM ===== */
+  .sitemap {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .homepage-card {
+    background: #152E82;
+    color: white;
+    padding: 28px 50px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 580px;
+    box-shadow: 0 4px 20px rgba(21, 46, 130, 0.25);
+    z-index: 2;
+  }
+  .homepage-card .label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 10px;
+    opacity: 0.7;
+  }
+  .homepage-card h2 {
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .homepage-card .url {
+    font-size: 13px;
+    font-weight: 400;
+    opacity: 0.7;
+  }
+  .v-line-top { width: 1px; height: 50px; background: #152E82; }
+  .h-line-wrap { width: 100%; display: flex; justify-content: center; }
+  .h-line { height: 1px; background: #152E82; width: calc(100% - 90px); max-width: 1180px; }
+  .v-line-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 14px;
+    max-width: 1240px;
+  }
+  .v-line-cards .vline { height: 30px; width: 1px; background: #152E82; margin: 0 auto; }
+  .cards-row {
+    display: grid;
+    grid-template-columns: repeat(11, 1fr);
+    gap: 14px;
+    width: 100%;
+    max-width: 1240px;
+  }
+  .nav-card {
+    background: white;
+    border: 1.5px solid #152E82;
+    border-radius: 8px;
+    padding: 14px 8px 16px;
+    text-align: center;
+    transition: all 0.2s ease;
+    min-height: 88px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+  .nav-card:hover {
+    background: #152E82;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(21, 46, 130, 0.15);
+  }
+  .nav-card .num {
+    display: block;
+    font-size: 10px;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 8px;
+    letter-spacing: 1px;
+  }
+  .nav-card:hover .num { color: rgba(255,255,255,0.7); }
+  .nav-card .title {
+    font-size: 11.5px;
+    font-weight: 600;
+    color: #152E82;
+    line-height: 1.25;
+  }
+  .nav-card:hover .title { color: white; }
+  .asset-divider {
+    margin-top: 60px;
+    margin-bottom: 14px;
+    font-size: 11px;
+    font-weight: 700;
+    color: #888;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+  }
+  .asset-card {
+    background: #DBE3F4;
+    color: #152E82;
+    padding: 22px 40px;
+    border-radius: 10px;
+    text-align: center;
+    min-width: 420px;
+  }
+  .asset-card .label {
+    display: block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+    opacity: 0.75;
+  }
+  .asset-card h3 {
+    font-size: 20px;
+    font-weight: 700;
+    letter-spacing: -0.2px;
+  }
+
+  /* ===== PAGE CARDS ===== */
+  .page-card {
+    border: 1px solid #E5E7EB;
+    border-radius: 12px;
+    margin-bottom: 22px;
+    overflow: hidden;
+    background: white;
+  }
+  .page-header-card {
+    background: linear-gradient(135deg, #152E82 0%, #0E1F5A 100%);
+    color: white;
+    padding: 26px 32px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+  }
+  .page-num-block {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-right: 24px;
+    border-right: 1px solid rgba(255,255,255,0.15);
+    min-width: 100px;
+  }
+  .page-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.6;
+    margin-bottom: 4px;
+  }
+  .page-num {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 54px;
+    font-weight: 800;
+    line-height: 1;
+    color: #DE051D;
+  }
+  .page-title-block { flex: 1; }
+  .page-title-block h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+    text-transform: uppercase;
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -0.3px;
+  }
+  .page-meta {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    flex-wrap: wrap;
+  }
+  .page-meta .slug {
+    background: rgba(255,255,255,0.12);
+    padding: 5px 12px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 500;
+  }
+  .page-meta .funnel-badge {
+    background: #DE051D;
+    padding: 5px 14px;
+    border-radius: 5px;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+  }
+  .page-body {
+    padding: 32px 36px;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 36px;
+  }
+  .page-col h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 16px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #DE051D;
+  }
+  .keyword-list, .sections-list {
+    list-style: none;
+    margin-bottom: 18px;
+  }
+  .keyword-list li {
+    background: #F5F5F7;
+    color: #152E82;
+    padding: 6px 12px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    font-size: 13px;
+    font-weight: 600;
+    font-family: 'Courier New', monospace;
+    display: inline-block;
+    margin-right: 6px;
+  }
+  .sections-list li {
+    padding: 8px 0 8px 22px;
+    font-size: 13.5px;
+    color: #444;
+    border-bottom: 1px dashed #EFEFEF;
+    position: relative;
+    line-height: 1.5;
+  }
+  .sections-list li:before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 14px;
+    width: 10px;
+    height: 2px;
+    background: #DE051D;
+  }
+  .sections-list li:last-child { border-bottom: none; }
+  .persona-text, .interlink-text {
+    font-size: 14px;
+    color: #444;
+    line-height: 1.65;
+    margin-bottom: 14px;
+  }
+  .persona-text strong, .interlink-text strong { color: #152E82; }
+  .cta-button {
+    display: inline-block;
+    background: #DE051D;
+    color: white;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    padding: 12px 24px;
+    border-radius: 6px;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-top: 10px;
+  }
+
+  /* ===== BLOG SECTION ===== */
+  .blog-intro {
+    background: #DBE3F4;
+    border-radius: 12px;
+    padding: 30px 36px;
+    margin-bottom: 30px;
+  }
+  .blog-intro h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    margin-bottom: 10px;
+  }
+  .blog-intro .blog-slug {
+    display: inline-block;
+    background: white;
+    color: #152E82;
+    padding: 5px 14px;
+    border-radius: 5px;
+    font-family: 'Courier New', monospace;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 14px;
+  }
+  .blog-intro p {
+    color: #444;
+    font-size: 14px;
+    line-height: 1.65;
+  }
+  .blog-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
+  }
+  .blog-cat {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 24px 18px;
+    text-align: center;
+  }
+  .blog-letter {
+    width: 48px;
+    height: 48px;
+    background: #152E82;
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 24px;
+    font-weight: 800;
+    margin: 0 auto 14px;
+  }
+  .blog-cat h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    line-height: 1.15;
+    margin-bottom: 10px;
+    min-height: 42px;
+  }
+  .blog-cat p {
+    font-size: 12.5px;
+    color: #666;
+    line-height: 1.55;
+  }
+
+  /* ===== TECH SPECS ===== */
+  .specs-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 18px;
+  }
+  .spec-box {
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 24px;
+  }
+  .spec-box h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #DE051D;
+  }
+  .spec-box ul { list-style: none; }
+  .spec-box ul li {
+    font-size: 13px;
+    color: #444;
+    padding: 6px 0;
+    border-bottom: 1px dashed #EFEFEF;
+    line-height: 1.4;
+  }
+  .spec-box ul li:last-child { border-bottom: none; }
+  .spec-box ul li strong { color: #152E82; font-weight: 700; }
+
+  .footer {
+    text-align: center;
+    padding: 30px 0 6px;
+    color: #888;
+    font-size: 12px;
+  }
+  .footer .signature {
+    margin-top: 8px;
+    color: #152E82;
+    font-weight: 700;
+    font-size: 13px;
+  }
+
+  @media (max-width: 1100px) {
+    .cards-row, .v-line-cards { grid-template-columns: repeat(6, 1fr); }
+    .nav-card .title { font-size: 11px; }
+    .specs-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .page-body { grid-template-columns: 1fr; }
+  }
+  @media (max-width: 700px) {
+    .cards-row, .v-line-cards { grid-template-columns: repeat(3, 1fr); }
+    .homepage-card { min-width: 90%; padding: 22px 24px; }
+    .homepage-card h2 { font-size: 18px; }
+    .asset-card { min-width: 90%; }
+    .page-header h1 { font-size: 40px; }
+    .section { padding: 30px 22px 40px; }
+    .specs-grid, .blog-grid { grid-template-columns: 1fr; }
+    .page-header-card { flex-direction: column; align-items: flex-start; gap: 14px; }
+    .page-num-block { flex-direction: row; gap: 14px; border-right: none; padding-right: 0; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; }
+    .page-num { font-size: 36px; }
+    .page-title-block h3 { font-size: 24px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <!-- Page Header -->
+  <div class="page-header">
+    <span class="label">Architettura</span>
+    <h1>Alberatura sito custom</h1>
+    <p class="sub">IMPRESA TURLIONE S.R.L. — 11 pagine commerciali / SEO + Blog editoriale</p>
+    <p class="lead">Mappa del sito strategicamente progettata sulla base dell'<strong>analisi SERP</strong>, del <strong>gap competitivo verso L.T.R. Asphalt</strong>, delle <strong>3 buyer personas</strong> (RUP / General Contractor / Progettisti) e degli <strong>asset industriali</strong> distintivi dell'azienda (UNI/PdR 88:2020, FPC, impianto Marini MAP 120 E190L, portfolio ANAS pluriennale).</p>
+  </div>
+
+  <!-- 1. MAPPA DEL SITO -->
+  <div class="section">
+    <h2 class="section-title">Mappa del sito</h2>
+    <p class="section-lead">Struttura ad <strong>albero gerarchico</strong> con la Home come hub centrale e <strong>11 pagine di livello 1</strong> ottimizzate per le keyword strategiche emerse dall'analisi SERP. La sezione <strong>Blog</strong> è un asset editoriale separato per traffico continuativo, backlink e authority topica.</p>
+
+    <div class="sitemap">
+      <div class="homepage-card">
+        <span class="label">HOMEPAGE</span>
+        <h2>Impresa Turlione</h2>
+        <span class="url">impresaturlione.it</span>
+      </div>
+      <div class="v-line-top"></div>
+      <div class="h-line-wrap"><div class="h-line"></div></div>
+      <div class="v-line-cards">
+        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
+        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
+        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
+        <div class="vline"></div><div class="vline"></div>
+      </div>
+      <div class="cards-row">
+        <div class="nav-card"><span class="num">01</span><span class="title">Azienda</span></div>
+        <div class="nav-card"><span class="num">02</span><span class="title">Impianti</span></div>
+        <div class="nav-card"><span class="num">03</span><span class="title">Conglomerato Bituminoso</span></div>
+        <div class="nav-card"><span class="num">04</span><span class="title">Calcestruzzi</span></div>
+        <div class="nav-card"><span class="num">05</span><span class="title">Conglomerato Cementizio</span></div>
+        <div class="nav-card"><span class="num">06</span><span class="title">Aree Operative</span></div>
+        <div class="nav-card"><span class="num">07</span><span class="title">Lavori</span></div>
+        <div class="nav-card"><span class="num">08</span><span class="title">Filiera &amp; Sostenibilità</span></div>
+        <div class="nav-card"><span class="num">09</span><span class="title">Certificazioni</span></div>
+        <div class="nav-card"><span class="num">10</span><span class="title">Progettisti &amp; RUP</span></div>
+        <div class="nav-card"><span class="num">11</span><span class="title">Contatti</span></div>
+      </div>
+      <div class="asset-divider">+ ASSET EDITORIALE SEPARATO</div>
+      <div class="asset-card">
+        <span class="label">ASSET EDITORIALE</span>
+        <h3>Blog · /blog/</h3>
+      </div>
+    </div>
+  </div>
+
+  <!-- 2. SCHEDE DETTAGLIATE -->
+  <div class="section">
+    <h2 class="section-title">Schede dettagliate per pagina</h2>
+    <p class="section-lead">Per ciascuna delle 11 pagine: <strong>URL slug, keyword strategiche, sezioni di contenuto, buyer persona target, ruolo nel funnel, CTA principale e interlinking interno</strong>.</p>
+    
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">01</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Azienda</h3>
+          <div class="page-meta">
+            <span class="slug">/azienda/</span>
+            <span class="funnel-badge">TOFU · Awareness</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>impresa turlione baragiano</li>
+<li>azienda asfalti basilicata</li>
+<li>storia impresa turlione potenza</li>
+<li>produzione conglomerato bituminoso lucania</li></ul>
+          <ul class="sections-list"><li>Storia dal 2000 e radicamento territoriale</li>
+<li>Mission, valori e visione di filiera circolare</li>
+<li>Sede Z.I. Baragiano Scalo (PZ) e posizione baricentrica</li>
+<li>Team e direzione tecnica</li>
+<li>Parco macchine e investimenti tecnologici</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> tutte e tre le personas (RUP, General Contractor, Progettisti). Pagina di <strong>trust-building</strong>: racconta l'azienda prima di parlare di servizi, posiziona Turlione come player industriale verticalmente integrato.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Impianti, Filiera &amp; Sostenibilità, Certificazioni, Lavori, Contatti.</p>
+          <a class="cta-button">Scopri chi siamo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">02</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Impianti</h3>
+          <div class="page-meta">
+            <span class="slug">/impianti/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>impianto conglomerato bituminoso basilicata</li>
+<li>impianto calcestruzzo potenza</li>
+<li>impianto riciclo inerti basilicata</li>
+<li>marini MAP 120 E190L impianto asfalto</li></ul>
+          <ul class="sections-list"><li>Impianto Bitumazione — Marini MAP 120 E190L (discontinuo a torre)</li>
+<li>Impianto Calcestruzzi preconfezionato certificato FPC</li>
+<li>Impianto Frantumazione e Recupero Inerti</li>
+<li>Laboratorio interno di controllo qualità</li>
+<li>Tracciabilità di filiera e prove di laboratorio</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> principalmente <strong>Persona 3 (Progettisti)</strong> e <strong>Persona 1 (RUP)</strong>. Pagina <strong>E-E-A-T</strong> per credibilità tecnica: dimostra capacità produttiva reale e tecnologia industriale di riferimento.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Filiera &amp; Sostenibilità, Certificazioni, Lavori.</p>
+          <a class="cta-button">Richiedi una visita tecnica →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">03</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Conglomerato Bituminoso</h3>
+          <div class="page-meta">
+            <span class="slug">/conglomerato-bituminoso/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>conglomerato bituminoso basilicata</li>
+<li>conglomerato bituminoso potenza</li>
+<li>conglomerato bituminoso matera</li>
+<li>produzione asfalto basilicata</li></ul>
+          <ul class="sections-list"><li>Tappeti di usura (CB 12.5) — UNI EN 13108-1</li>
+<li>Splittmastix Asphalt (SMA) — UNI EN 13108-5</li>
+<li>Drenante fonoassorbente — UNI EN 13108-7</li>
+<li>Asfalto a freddo (riparazioni e manutenzione)</li>
+<li>Aggregati e materie prime</li>
+<li>Schede tecniche e DOP/CE scaricabili</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (General Contractor)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina <strong>hub di cluster</strong>: dialoga con LTR Asphalt sul terreno di gioco principale e introduce le sotto-tipologie di prodotto.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative (bituminoso Potenza/Matera/Basilicata), Impianti, Certificazioni, Filiera, Lavori.</p>
+          <a class="cta-button">Richiedi preventivo conglomerato bituminoso →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">04</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Calcestruzzi</h3>
+          <div class="page-meta">
+            <span class="slug">/calcestruzzi/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>calcestruzzi basilicata</li>
+<li>calcestruzzi potenza</li>
+<li>calcestruzzi matera</li>
+<li>calcestruzzo preconfezionato CAM</li></ul>
+          <ul class="sections-list"><li>Calcestruzzo preconfezionato — classi UNI EN 206</li>
+<li>Calcestruzzo CAM (Criteri Ambientali Minimi)</li>
+<li>Calcestruzzo per opere strutturali e fondazioni</li>
+<li>Certificazione FPC (Controllo Processo Produzione)</li>
+<li>Miscele su misura per capitolato</li>
+<li>Schede tecniche e prove di laboratorio scaricabili</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 2 (GC)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina ad <strong>altissimo valore SEO</strong>: cluster scoperto da L.T.R. Asphalt, finestra di posizionamento 4-6 mesi.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative (calcestruzzi Potenza/Matera/Basilicata), Conglomerato cementizio, Impianti, Certificazioni.</p>
+          <a class="cta-button">Richiedi preventivo calcestruzzo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">05</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Conglomerato Cementizio</h3>
+          <div class="page-meta">
+            <span class="slug">/conglomerato-cementizio/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>conglomerato cementizio basilicata</li>
+<li>conglomerato cementizio potenza</li>
+<li>conglomerato cementizio matera</li>
+<li>cementizio CAM gare pubbliche</li></ul>
+          <ul class="sections-list"><li>Cos'è il conglomerato cementizio (definizione tecnica)</li>
+<li>Differenza con il calcestruzzo preconfezionato</li>
+<li>Applicazioni: opere stradali, pavimentazioni industriali, idrauliche</li>
+<li>Conformità CAM e UNI/PdR 88:2020</li>
+<li>Miscele progettate su capitolato</li>
+<li>Supporto consulenziale a progettisti e RUP</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong> in fase di stesura capitolato. Pagina <strong>differenziale</strong>: territorio digitalmente vergine, nessun competitor regionale presidia il cluster.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative, Calcestruzzi, Impianti, Certificazioni, Progettisti &amp; RUP.</p>
+          <a class="cta-button">Richiedi consulenza tecnica →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">06</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Aree Operative</h3>
+          <div class="page-meta">
+            <span class="slug">/aree-operative/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>asfalti basilicata fornitore</li>
+<li>calcestruzzo basilicata produttore</li>
+<li>fornitore conglomerato bituminoso potenza matera</li>
+<li>raggio operativo asfalti Sud Italia</li></ul>
+          <ul class="sections-list"><li>Mappa raggio operativo (Baragiano + 100 km)</li>
+<li>Hub Potenza con 3 landing dedicate (bituminoso/calcestruzzi/cementizio)</li>
+<li>Hub Matera con 2 landing dedicate (asfalti/calcestruzzi)</li>
+<li>Overview regionale Basilicata</li>
+<li>Tempi di consegna e logistica</li>
+<li>Cantieri in corso per area</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> tutte le personas. Pagina <strong>gateway al posizionamento geo-SEO</strong>: ospita 10 landing geo-localizzate, cuore della strategia di conquista delle SERP locali.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Lavori, Contatti, Cantieri in corso.</p>
+          <a class="cta-button">Verifica la copertura del tuo cantiere →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">07</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Lavori</h3>
+          <div class="page-meta">
+            <span class="slug">/lavori/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>lavori ANAS basilicata</li>
+<li>portfolio asfaltatura potenza</li>
+<li>opere stradali basilicata realizzazioni</li>
+<li>case study cantieri turlione</li></ul>
+          <ul class="sections-list"><li>Opere pubbliche: ANAS SS 658, SS 407, RA 05, A2 Mediterraneo, SS 172 dei Trulli</li>
+<li>Opere private: Centro Commerciale Auchan, Ferrero, Ospedale San Carlo</li>
+<li>Case study con foto, descrizione tecnica, miscela utilizzata</li>
+<li>Galleria fotografica e video drone</li>
+<li>Filtri per tipologia (pubblico/privato, asfalto/calcestruzzo, territorio)</li>
+<li>Mappa interattiva dei cantieri realizzati</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 2 (GC)</strong>. Pagina di <strong>prova sociale e referenze</strong>: il portafoglio ANAS è l'asset di trust più forte di Turlione, oggi invisibile sul sito attuale.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Aree Operative, Filiera &amp; Sostenibilità, Certificazioni.</p>
+          <a class="cta-button">Esplora il portfolio completo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">08</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Filiera &amp; Sostenibilità</h3>
+          <div class="page-meta">
+            <span class="slug">/filiera-sostenibilita/</span>
+            <span class="funnel-badge">TOFU + MOFU</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>filiera circolare asfalto basilicata</li>
+<li>riciclo fresato basilicata</li>
+<li>UNI PdR 88:2020 conglomerato bituminoso</li>
+<li>CAM appalti pubblici basilicata</li></ul>
+          <ul class="sections-list"><li>Filiera circolare integrata: cava → produzione → posa → riciclo</li>
+<li>Recupero inerti e Materie Prime Seconde (MPS)</li>
+<li>Riciclo fresato fino al 30% nelle nuove miscele</li>
+<li>Conformità Criteri Ambientali Minimi (CAM)</li>
+<li>Tracciabilità totale di filiera UNI/PdR 88:2020</li>
+<li>Riduzione impronta CO2 e km zero</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 3 (Progettisti)</strong> in capitolato. <strong>Differenziatore competitivo n.1</strong> verso L.T.R. Asphalt: filiera circolare reale, non solo dichiarata.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Impianti, Calcestruzzi, Cementizio, Bituminoso, Lavori.</p>
+          <a class="cta-button">Scopri la nostra filiera →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">09</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Certificazioni</h3>
+          <div class="page-meta">
+            <span class="slug">/certificazioni/</span>
+            <span class="funnel-badge">BOFU · Decision</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>UNI PdR 88:2020 basilicata</li>
+<li>FPC certificazione calcestruzzo</li>
+<li>certificazione CAM asfalto basilicata</li>
+<li>DOP marcatura CE conglomerato</li></ul>
+          <ul class="sections-list"><li>UNI/PdR 88:2020 — sostenibilità filiera bituminoso</li>
+<li>FPC — Controllo del Processo di Produzione in Fabbrica (calcestruzzo)</li>
+<li>Conformità CAM per appalti pubblici</li>
+<li>DOP e marcatura CE scaricabili per ogni miscela</li>
+<li>Documentazione di gara pronta all'uso</li>
+<li>Eventuali certificazioni ISO (da verificare con cliente)</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per documentazione di gara. Pagina <strong>E-E-A-T cruciale</strong>: trasparenza sulla conformità normativa = credibilità immediata in fase di prequalifica.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Filiera &amp; Sostenibilità, Progettisti &amp; RUP, Lavori.</p>
+          <a class="cta-button">Scarica le certificazioni →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">10</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Progettisti &amp; RUP</h3>
+          <div class="page-meta">
+            <span class="slug">/progettisti-rup/</span>
+            <span class="funnel-badge">BOFU · Decision</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>schede tecniche conglomerato bituminoso</li>
+<li>DOP asfalto basilicata download</li>
+<li>capitolato calcestruzzo CAM basilicata</li>
+<li>consulenza pre-cantiere progettisti</li></ul>
+          <ul class="sections-list"><li>Schede tecniche scaricabili (per ogni miscela)</li>
+<li>DOP e marcatura CE in formato PDF</li>
+<li>Capitolati tipo per gare pubbliche</li>
+<li>Servizio consulenza pre-cantiere gratuita</li>
+<li>Modulo richiesta documentazione tecnica</li>
+<li>Contatto diretto con laboratorio interno</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong>. Canale di <strong>conversione B2B prequalifica</strong> oggi non presidiato dai competitor: pagina trasforma l'ufficio tecnico Turlione in partner consulenziale.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Filiera, tutte le pagine prodotto, Contatti.</p>
+          <a class="cta-button">Richiedi documentazione tecnica →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">11</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Contatti</h3>
+          <div class="page-meta">
+            <span class="slug">/contatti/</span>
+            <span class="funnel-badge">BOFU · Decision</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>contatti impresa turlione baragiano</li>
+<li>preventivo asfalto basilicata</li>
+<li>telefono impresa turlione potenza</li>
+<li>indirizzo turlione baragiano</li></ul>
+          <ul class="sections-list"><li>Form richiesta preventivo (asfalto/calcestruzzo/cementizio)</li>
+<li>Indirizzo sede + mappa interattiva (Z.I. Baragiano Scalo, PZ)</li>
+<li>Telefono diretto + WhatsApp Business</li>
+<li>Email commerciale + amministrativa</li>
+<li>Orari di apertura uffici</li>
+<li>Sezione Cantieri in corso (mappa attiva)</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; CTA</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> tutte le personas in fase decisionale. <strong>Pagina di conversione finale</strong>: ogni euro speso in SEO, Ads, content e PR converge qui.</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Footer di tutte le pagine, CTA principali, sticky-button mobile.</p>
+          <a class="cta-button">Richiedi preventivo →</a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- 3. BLOG -->
+  <div class="section">
+    <h2 class="section-title">Blog editoriale</h2>
+    <p class="section-lead">Sezione editoriale <strong>aggiuntiva</strong> rispetto alle 11 pagine commerciali. Asset SEO long-tail, traffico continuativo, backlink istituzionali, posizionamento autorevole sulle ricerche informazionali del bacino RUP / progettisti / general contractor.</p>
+
+    <div class="blog-intro">
+      <h3>Blog — Materiali, Filiera, Cantieri</h3>
+      <span class="blog-slug">/blog/</span>
+      <p><strong>5 categorie verticali</strong>, almeno <strong>2 articoli al mese</strong>, ottimizzati per le keyword long-tail emerse dalla ricerca semantica e calibrati sul tono <strong>tecnico-industriale</strong> coerente con il posizionamento B2B di Impresa Turlione.</p>
+    </div>
+
+    <div class="blog-grid">
+      
+    <div class="blog-cat">
+      <div class="blog-letter">T</div>
+      <h4>Tecniche &amp; Materiali</h4>
+      <p>Schede tecniche, differenze tra miscele, norme UNI EN, focus prodotto. Tono divulgativo per progettisti e RUP.</p>
+    </div>
+
+    <div class="blog-cat">
+      <div class="blog-letter">C</div>
+      <h4>CAM &amp; Appalti</h4>
+      <p>Guide ai Criteri Ambientali Minimi, novità Codice Appalti, opportunità PNRR, prequalifiche tecniche.</p>
+    </div>
+
+    <div class="blog-cat">
+      <div class="blog-letter">F</div>
+      <h4>Filiera Circolare</h4>
+      <p>Riciclo fresato, MPS, sostenibilità di filiera, tracciabilità, riduzione impronta CO2.</p>
+    </div>
+
+    <div class="blog-cat">
+      <div class="blog-letter">R</div>
+      <h4>Realizzazioni &amp; Cantieri</h4>
+      <p>Case study di cantieri ANAS e privati, dietro le quinte produzione, drone view degli impianti.</p>
+    </div>
+
+    <div class="blog-cat">
+      <div class="blog-letter">N</div>
+      <h4>News &amp; Eventi</h4>
+      <p>Settore costruzioni, fiere SAIE Bari, formazione, novità normative.</p>
+    </div>
+
+    </div>
+  </div>
+
+  <!-- 4. SPECIFICHE TECNICHE -->
+  <div class="section">
+    <h2 class="section-title">Specifiche tecniche &amp; SEO</h2>
+    <p class="section-lead">Requisiti tecnici e di indicizzazione che il nuovo sito custom deve rispettare per <strong>massimizzare il posizionamento organico</strong> e <strong>chiudere il gap competitivo con L.T.R. Asphalt</strong>.</p>
+
+    <div class="specs-grid">
+      <div class="spec-box">
+        <h4>Architettura URL</h4>
+        <ul>
+          <li><strong>URL parlanti</strong> con keyword + località</li>
+          <li>Trattini (-) come separatori</li>
+          <li>No parametri inutili o /index.php/</li>
+          <li>Profondità max 3 livelli</li>
+          <li><strong>Redirect 301</strong> dal vecchio Joomla</li>
+        </ul>
+      </div>
+
+      <div class="spec-box">
+        <h4>Meta tag obbligatori</h4>
+        <ul>
+          <li><strong>Title</strong> 55-65 caratteri (con località per landing geo)</li>
+          <li><strong>Meta description</strong> 150-160 con CTA</li>
+          <li><strong>H1 unico</strong> per pagina</li>
+          <li>Open Graph per social sharing</li>
+          <li>Canonical su tutte le pagine</li>
+        </ul>
+      </div>
+
+      <div class="spec-box">
+        <h4>Schema markup (JSON-LD)</h4>
+        <ul>
+          <li><strong>LocalBusiness</strong> (sede Baragiano)</li>
+          <li><strong>Organization</strong> con NAP coerente</li>
+          <li><strong>Product</strong> per ogni miscela tecnica</li>
+          <li><strong>FAQPage</strong> sulle pagine prodotto</li>
+          <li><strong>BreadcrumbList</strong> su tutte le pagine</li>
+        </ul>
+      </div>
+
+      <div class="spec-box">
+        <h4>Performance</h4>
+        <ul>
+          <li><strong>Core Web Vitals</strong> tutti verdi</li>
+          <li>LCP &lt; 2.5s</li>
+          <li>Immagini lazy-load + formato WebP</li>
+          <li>HTTPS obbligatorio (TLS 1.3)</li>
+          <li>Mobile-first responsive</li>
+        </ul>
+      </div>
+
+      <div class="spec-box">
+        <h4>Accessibilità WCAG 2.1 AA</h4>
+        <ul>
+          <li><strong>Contrasto colori</strong> 4.5:1 minimo</li>
+          <li>Alt text descrittivo per ogni immagine</li>
+          <li>Navigazione da tastiera</li>
+          <li>Font ridimensionabili</li>
+          <li>ARIA label sui form di preventivo</li>
+        </ul>
+      </div>
+
+      <div class="spec-box">
+        <h4>Conformità normativa</h4>
+        <ul>
+          <li><strong>Privacy Policy GDPR</strong> intestata a Turlione</li>
+          <li>Cookie banner Linee Guida Garante 2021</li>
+          <li><strong>Footer dati societari</strong> (art. 2250 c.c.)</li>
+          <li>Trasparenza appalti (L. 124/2017)</li>
+          <li>Termini e condizioni B2B</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="footer">
+    Alberatura sito — Impresa Turlione S.r.l.<br>
+    <span class="signature">A cura di: Salvo Bilotti — Strategist</span>
+  </div>
+
+</div>
+</body>
+</html>
