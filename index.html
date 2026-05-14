@@ -15,7 +15,7 @@
     line-height: 1.5;
     padding: 40px 20px;
   }
-  .container { max-width: 1320px; margin: 0 auto; }
+  .container { max-width: 1380px; margin: 0 auto; }
 
   /* Page Header */
   .page-header {
@@ -55,6 +55,24 @@
     opacity: 0.9;
     max-width: 900px;
   }
+  .page-counter {
+    display: inline-flex;
+    align-items: baseline;
+    gap: 8px;
+    margin-top: 24px;
+    background: rgba(255,255,255,0.12);
+    padding: 12px 22px;
+    border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.18);
+  }
+  .page-counter .big {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 32px;
+    font-weight: 800;
+    color: #DE051D;
+    line-height: 1;
+  }
+  .page-counter .label-text { font-size: 14px; opacity: 0.85; }
 
   /* Section wrapper */
   .section {
@@ -120,21 +138,21 @@
   }
   .v-line-top { width: 1px; height: 50px; background: #152E82; }
   .h-line-wrap { width: 100%; display: flex; justify-content: center; }
-  .h-line { height: 1px; background: #152E82; width: calc(100% - 90px); max-width: 1180px; }
+  .h-line { height: 1px; background: #152E82; width: calc(100% - 90px); max-width: 1280px; }
   .v-line-cards {
     width: 100%;
     display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    gap: 14px;
-    max-width: 1240px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
+    max-width: 1320px;
   }
   .v-line-cards .vline { height: 30px; width: 1px; background: #152E82; margin: 0 auto; }
   .cards-row {
     display: grid;
-    grid-template-columns: repeat(11, 1fr);
-    gap: 14px;
+    grid-template-columns: repeat(10, 1fr);
+    gap: 10px;
     width: 100%;
-    max-width: 1240px;
+    max-width: 1320px;
   }
   .nav-card {
     background: white;
@@ -143,10 +161,11 @@
     padding: 14px 8px 16px;
     text-align: center;
     transition: all 0.2s ease;
-    min-height: 88px;
+    min-height: 95px;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    position: relative;
   }
   .nav-card:hover {
     background: #152E82;
@@ -164,14 +183,139 @@
   }
   .nav-card:hover .num { color: rgba(255,255,255,0.7); }
   .nav-card .title {
-    font-size: 11.5px;
+    font-size: 11px;
     font-weight: 600;
     color: #152E82;
-    line-height: 1.25;
+    line-height: 1.2;
   }
   .nav-card:hover .title { color: white; }
+  .nav-card.container-card {
+    background: #DBE3F4;
+    border: 1.5px dashed #152E82;
+  }
+  .nav-card.container-card .container-tag {
+    font-size: 8px;
+    font-weight: 700;
+    color: #DE051D;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+  }
+  .nav-card.container-card .title {
+    font-size: 13px;
+    font-weight: 700;
+    color: #152E82;
+    margin-bottom: 4px;
+  }
+  .nav-card.container-card .children-count {
+    font-size: 9px;
+    font-weight: 600;
+    color: #555;
+    margin-top: 4px;
+  }
+  .new-pill {
+    position: absolute;
+    top: -8px;
+    right: -6px;
+    background: #DE051D;
+    color: white;
+    font-size: 8px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 3px 7px;
+    border-radius: 4px;
+  }
+
+  /* Container expansion sections */
+  .expansion-section {
+    width: 100%;
+    max-width: 1320px;
+    margin-top: 28px;
+  }
+  .expansion-label {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin-bottom: 14px;
+    color: #152E82;
+  }
+  .expansion-label .name {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 16px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+  }
+  .expansion-label .arrow {
+    flex: 1;
+    height: 1px;
+    background: #152E82;
+    opacity: 0.3;
+  }
+  .expansion-label .badge {
+    background: #DBE3F4;
+    color: #152E82;
+    padding: 4px 10px;
+    border-radius: 14px;
+    font-size: 11px;
+    font-weight: 700;
+  }
+  .expansion-cards {
+    display: grid;
+    gap: 12px;
+  }
+  .expansion-cards.impianti {
+    grid-template-columns: repeat(3, 1fr);
+  }
+  .expansion-cards.prodotti {
+    grid-template-columns: repeat(7, 1fr);
+  }
+  .sub-card {
+    background: white;
+    border: 1px solid #B5C2DD;
+    border-radius: 7px;
+    padding: 12px 6px 14px;
+    text-align: center;
+    min-height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    transition: all 0.2s ease;
+  }
+  .sub-card:hover {
+    background: #F5F5F7;
+    transform: translateY(-1px);
+  }
+  .sub-card .num {
+    display: block;
+    font-size: 9px;
+    font-weight: 700;
+    color: #888;
+    margin-bottom: 6px;
+    letter-spacing: 1px;
+  }
+  .sub-card .title {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: #152E82;
+    line-height: 1.2;
+  }
+  .new-pill-sm {
+    position: absolute;
+    top: -6px;
+    right: -4px;
+    background: #DE051D;
+    color: white;
+    font-size: 7px;
+    font-weight: 800;
+    letter-spacing: 1px;
+    padding: 2px 5px;
+    border-radius: 3px;
+  }
+  
   .asset-divider {
-    margin-top: 60px;
+    margin-top: 50px;
     margin-bottom: 14px;
     font-size: 11px;
     font-weight: 700;
@@ -205,14 +349,14 @@
   .page-card {
     border: 1px solid #E5E7EB;
     border-radius: 12px;
-    margin-bottom: 22px;
+    margin-bottom: 20px;
     overflow: hidden;
     background: white;
   }
   .page-header-card {
     background: linear-gradient(135deg, #152E82 0%, #0E1F5A 100%);
     color: white;
-    padding: 26px 32px;
+    padding: 24px 30px;
     display: flex;
     align-items: center;
     gap: 28px;
@@ -235,7 +379,7 @@
   }
   .page-num {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 54px;
+    font-size: 50px;
     font-weight: 800;
     line-height: 1;
     color: #DE051D;
@@ -243,12 +387,26 @@
   .page-title-block { flex: 1; }
   .page-title-block h3 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 32px;
+    font-size: 28px;
     font-weight: 700;
     text-transform: uppercase;
     line-height: 1.1;
     margin-bottom: 8px;
     letter-spacing: -0.3px;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex-wrap: wrap;
+  }
+  .new-badge-card {
+    background: #DE051D;
+    color: white;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.5px;
+    padding: 4px 10px;
+    border-radius: 4px;
+    font-family: 'Inter', sans-serif;
   }
   .page-meta {
     display: flex;
@@ -274,45 +432,46 @@
     text-transform: uppercase;
   }
   .page-body {
-    padding: 32px 36px;
+    padding: 28px 32px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 36px;
+    gap: 32px;
   }
   .page-col h4 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 18px;
+    font-size: 17px;
     font-weight: 700;
     color: #152E82;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 16px;
-    padding-bottom: 10px;
+    margin-bottom: 14px;
+    padding-bottom: 8px;
     border-bottom: 2px solid #DE051D;
   }
   .keyword-list, .sections-list {
     list-style: none;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .keyword-list li {
     background: #F5F5F7;
     color: #152E82;
-    padding: 6px 12px;
+    padding: 5px 11px;
     border-radius: 4px;
-    margin-bottom: 6px;
-    font-size: 13px;
+    margin-bottom: 5px;
+    font-size: 12px;
     font-weight: 600;
     font-family: 'Courier New', monospace;
     display: inline-block;
-    margin-right: 6px;
+    margin-right: 5px;
   }
+  .sections-list { margin-top: 14px; }
   .sections-list li {
-    padding: 8px 0 8px 22px;
-    font-size: 13.5px;
+    padding: 7px 0 7px 20px;
+    font-size: 13px;
     color: #444;
     border-bottom: 1px dashed #EFEFEF;
     position: relative;
-    line-height: 1.5;
+    line-height: 1.45;
   }
   .sections-list li:before {
     content: '';
@@ -325,10 +484,10 @@
   }
   .sections-list li:last-child { border-bottom: none; }
   .persona-text, .interlink-text {
-    font-size: 14px;
+    font-size: 13.5px;
     color: #444;
-    line-height: 1.65;
-    margin-bottom: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
   }
   .persona-text strong, .interlink-text strong { color: #152E82; }
   .cta-button {
@@ -338,19 +497,49 @@
     font-family: 'Barlow Condensed', sans-serif;
     font-size: 14px;
     font-weight: 700;
-    padding: 12px 24px;
+    padding: 11px 22px;
     border-radius: 6px;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-top: 10px;
+    margin-top: 8px;
+  }
+
+  /* Container divider between page groups in detail section */
+  .container-divider {
+    background: #DBE3F4;
+    border-left: 4px solid #152E82;
+    padding: 18px 26px;
+    margin: 28px 0 18px;
+    border-radius: 6px;
+  }
+  .container-divider .label {
+    font-size: 10px;
+    font-weight: 700;
+    color: #DE051D;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 4px;
+  }
+  .container-divider h3 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+  }
+  .container-divider p {
+    color: #555;
+    font-size: 13px;
+    margin-top: 6px;
   }
 
   /* ===== BLOG SECTION ===== */
   .blog-intro {
     background: #DBE3F4;
     border-radius: 12px;
-    padding: 30px 36px;
-    margin-bottom: 30px;
+    padding: 28px 34px;
+    margin-bottom: 28px;
   }
   .blog-intro h3 {
     font-family: 'Barlow Condensed', sans-serif;
@@ -389,8 +578,8 @@
     text-align: center;
   }
   .blog-letter {
-    width: 48px;
-    height: 48px;
+    width: 46px;
+    height: 46px;
     background: #152E82;
     color: white;
     border-radius: 50%;
@@ -398,22 +587,22 @@
     align-items: center;
     justify-content: center;
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 24px;
+    font-size: 22px;
     font-weight: 800;
     margin: 0 auto 14px;
   }
   .blog-cat h4 {
     font-family: 'Barlow Condensed', sans-serif;
-    font-size: 17px;
+    font-size: 16px;
     font-weight: 700;
     color: #152E82;
     text-transform: uppercase;
     line-height: 1.15;
     margin-bottom: 10px;
-    min-height: 42px;
+    min-height: 38px;
   }
   .blog-cat p {
-    font-size: 12.5px;
+    font-size: 12px;
     color: #666;
     line-height: 1.55;
   }
@@ -428,7 +617,7 @@
     background: #FAFAFA;
     border: 1px solid #E5E7EB;
     border-radius: 10px;
-    padding: 24px;
+    padding: 22px;
   }
   .spec-box h4 {
     font-family: 'Barlow Condensed', sans-serif;
@@ -437,20 +626,53 @@
     color: #152E82;
     text-transform: uppercase;
     letter-spacing: 1px;
-    margin-bottom: 14px;
-    padding-bottom: 10px;
+    margin-bottom: 12px;
+    padding-bottom: 8px;
     border-bottom: 2px solid #DE051D;
   }
   .spec-box ul { list-style: none; }
   .spec-box ul li {
-    font-size: 13px;
+    font-size: 12.5px;
     color: #444;
-    padding: 6px 0;
+    padding: 5px 0;
     border-bottom: 1px dashed #EFEFEF;
     line-height: 1.4;
   }
   .spec-box ul li:last-child { border-bottom: none; }
   .spec-box ul li strong { color: #152E82; font-weight: 700; }
+
+  /* ===== FOOTER LEGAL ===== */
+  .footer-legal {
+    background: #FAFAFA;
+    border: 1px solid #E5E7EB;
+    border-radius: 10px;
+    padding: 22px 28px;
+    margin-top: 30px;
+  }
+  .footer-legal h4 {
+    font-family: 'Barlow Condensed', sans-serif;
+    font-size: 17px;
+    font-weight: 700;
+    color: #152E82;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 14px;
+  }
+  .footer-legal-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+  }
+  .legal-item {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 6px;
+    padding: 10px 12px;
+    font-size: 12px;
+    color: #444;
+    font-weight: 600;
+    text-align: center;
+  }
 
   .footer {
     text-align: center;
@@ -465,15 +687,19 @@
     font-size: 13px;
   }
 
-  @media (max-width: 1100px) {
-    .cards-row, .v-line-cards { grid-template-columns: repeat(6, 1fr); }
+  @media (max-width: 1200px) {
+    .cards-row, .v-line-cards { grid-template-columns: repeat(5, 1fr); }
+    .expansion-cards.prodotti { grid-template-columns: repeat(4, 1fr); }
     .nav-card .title { font-size: 11px; }
     .specs-grid { grid-template-columns: repeat(2, 1fr); }
-    .blog-grid { grid-template-columns: repeat(2, 1fr); }
+    .blog-grid { grid-template-columns: repeat(3, 1fr); }
     .page-body { grid-template-columns: 1fr; }
+    .footer-legal-grid { grid-template-columns: repeat(2, 1fr); }
   }
   @media (max-width: 700px) {
     .cards-row, .v-line-cards { grid-template-columns: repeat(3, 1fr); }
+    .expansion-cards.impianti { grid-template-columns: repeat(2, 1fr); }
+    .expansion-cards.prodotti { grid-template-columns: repeat(2, 1fr); }
     .homepage-card { min-width: 90%; padding: 22px 24px; }
     .homepage-card h2 { font-size: 18px; }
     .asset-card { min-width: 90%; }
@@ -483,7 +709,7 @@
     .page-header-card { flex-direction: column; align-items: flex-start; gap: 14px; }
     .page-num-block { flex-direction: row; gap: 14px; border-right: none; padding-right: 0; padding-bottom: 12px; border-bottom: 1px solid rgba(255,255,255,0.15); width: 100%; }
     .page-num { font-size: 36px; }
-    .page-title-block h3 { font-size: 24px; }
+    .page-title-block h3 { font-size: 22px; }
   }
 </style>
 </head>
@@ -494,14 +720,19 @@
   <div class="page-header">
     <span class="label">Architettura</span>
     <h1>Alberatura sito custom</h1>
-    <p class="sub">IMPRESA TURLIONE S.R.L. — 11 pagine commerciali / SEO + Blog editoriale</p>
+    <p class="sub">IMPRESA TURLIONE S.R.L.</p>
     <p class="lead">Mappa del sito strategicamente progettata sulla base dell'<strong>analisi SERP</strong>, del <strong>gap competitivo verso L.T.R. Asphalt</strong>, delle <strong>3 buyer personas</strong> (RUP / General Contractor / Progettisti) e degli <strong>asset industriali</strong> distintivi dell'azienda (UNI/PdR 88:2020, FPC, impianto Marini MAP 120 E190L, portfolio ANAS pluriennale).</p>
+    <div class="page-counter">
+      <span class="big">19</span><span class="label-text">pagine di contenuto</span>
+      <span style="margin: 0 8px; opacity: 0.4;">+</span>
+      <span class="big">1</span><span class="label-text">Blog editoriale separato</span>
+    </div>
   </div>
 
   <!-- 1. MAPPA DEL SITO -->
   <div class="section">
     <h2 class="section-title">Mappa del sito</h2>
-    <p class="section-lead">Struttura ad <strong>albero gerarchico</strong> con la Home come hub centrale e <strong>11 pagine di livello 1</strong> ottimizzate per le keyword strategiche emerse dall'analisi SERP. La sezione <strong>Blog</strong> è un asset editoriale separato per traffico continuativo, backlink e authority topica.</p>
+    <p class="section-lead">Struttura ad <strong>albero gerarchico</strong> con la Home come hub centrale, <strong>10 pagine di livello 1</strong> e <strong>2 contenitori</strong> (Impianti e Prodotti) che raggruppano le rispettive sotto-pagine. Il <strong>Blog</strong> è un asset editoriale separato per traffico continuativo e content authority.</p>
 
     <div class="sitemap">
       <div class="homepage-card">
@@ -512,24 +743,131 @@
       <div class="v-line-top"></div>
       <div class="h-line-wrap"><div class="h-line"></div></div>
       <div class="v-line-cards">
-        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
-        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
-        <div class="vline"></div><div class="vline"></div><div class="vline"></div>
-        <div class="vline"></div><div class="vline"></div>
+        <div class="vline"></div><div class="vline"></div><div class="vline"></div><div class="vline"></div><div class="vline"></div>
+        <div class="vline"></div><div class="vline"></div><div class="vline"></div><div class="vline"></div><div class="vline"></div>
       </div>
       <div class="cards-row">
-        <div class="nav-card"><span class="num">01</span><span class="title">Azienda</span></div>
-        <div class="nav-card"><span class="num">02</span><span class="title">Impianti</span></div>
-        <div class="nav-card"><span class="num">03</span><span class="title">Conglomerato Bituminoso</span></div>
-        <div class="nav-card"><span class="num">04</span><span class="title">Calcestruzzi</span></div>
-        <div class="nav-card"><span class="num">05</span><span class="title">Conglomerato Cementizio</span></div>
-        <div class="nav-card"><span class="num">06</span><span class="title">Aree Operative</span></div>
-        <div class="nav-card"><span class="num">07</span><span class="title">Lavori</span></div>
-        <div class="nav-card"><span class="num">08</span><span class="title">Filiera &amp; Sostenibilità</span></div>
-        <div class="nav-card"><span class="num">09</span><span class="title">Certificazioni</span></div>
-        <div class="nav-card"><span class="num">10</span><span class="title">Progettisti &amp; RUP</span></div>
-        <div class="nav-card"><span class="num">11</span><span class="title">Contatti</span></div>
+        <div class="nav-card">
+          
+          <span class="num">02</span>
+          <span class="title">Azienda</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">03</span>
+          <span class="title">Parco macchine</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">04</span>
+          <span class="title">Filiera &amp; Sostenibilità</span>
+        </div>
+        <div class="nav-card container-card">
+          <span class="container-tag">CONTENITORE</span>
+          <span class="title">Impianti</span>
+          <span class="children-count">+ 3 pagine</span>
+        </div>
+        <div class="nav-card container-card">
+          <span class="container-tag">CONTENITORE</span>
+          <span class="title">Prodotti</span>
+          <span class="children-count">+ 7 pagine</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">15</span>
+          <span class="title">Certificazioni</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">16</span>
+          <span class="title">Lavori</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">17</span>
+          <span class="title">Video</span>
+        </div>
+        <div class="nav-card">
+          <span class="new-pill">NUOVA</span>
+          <span class="num">18</span>
+          <span class="title">Area Tecnica</span>
+        </div>
+        <div class="nav-card">
+          
+          <span class="num">19</span>
+          <span class="title">Contatti</span>
+        </div>
       </div>
+
+      <!-- Expansion: IMPIANTI -->
+      <div class="expansion-section">
+        <div class="expansion-label">
+          <span class="name">↳ Contenitore Impianti</span>
+          <span class="arrow"></span>
+          <span class="badge">3 pagine</span>
+        </div>
+        <div class="expansion-cards impianti">
+        <div class="sub-card">
+          <span class="num">05</span>
+          <span class="title">Bitumazione</span>
+        </div>
+        <div class="sub-card">
+          <span class="num">06</span>
+          <span class="title">Frantumazione</span>
+        </div>
+        <div class="sub-card">
+          <span class="num">07</span>
+          <span class="title">Calcestruzzi</span>
+        </div>
+        </div>
+      </div>
+
+      <!-- Expansion: PRODOTTI -->
+      <div class="expansion-section">
+        <div class="expansion-label">
+          <span class="name">↳ Contenitore Prodotti</span>
+          <span class="arrow"></span>
+          <span class="badge">7 pagine</span>
+        </div>
+        <div class="expansion-cards prodotti">
+        <div class="sub-card">
+          
+          <span class="num">08</span>
+          <span class="title">Conglomerato Bituminoso</span>
+        </div>
+        <div class="sub-card">
+          
+          <span class="num">09</span>
+          <span class="title">Drenante</span>
+        </div>
+        <div class="sub-card">
+          
+          <span class="num">10</span>
+          <span class="title">Splittmastix</span>
+        </div>
+        <div class="sub-card">
+          
+          <span class="num">11</span>
+          <span class="title">Aggregati</span>
+        </div>
+        <div class="sub-card">
+          
+          <span class="num">12</span>
+          <span class="title">Asfalto a freddo</span>
+        </div>
+        <div class="sub-card">
+          
+          <span class="num">13</span>
+          <span class="title">Calcestruzzi</span>
+        </div>
+        <div class="sub-card">
+          <span class="new-pill-sm">NUOVA</span>
+          <span class="num">14</span>
+          <span class="title">Conglomerato Cementizio</span>
+        </div>
+        </div>
+      </div>
+
       <div class="asset-divider">+ ASSET EDITORIALE SEPARATO</div>
       <div class="asset-card">
         <span class="label">ASSET EDITORIALE</span>
@@ -541,13 +879,50 @@
   <!-- 2. SCHEDE DETTAGLIATE -->
   <div class="section">
     <h2 class="section-title">Schede dettagliate per pagina</h2>
-    <p class="section-lead">Per ciascuna delle 11 pagine: <strong>URL slug, keyword strategiche, sezioni di contenuto, buyer persona target, ruolo nel funnel, CTA principale e interlinking interno</strong>.</p>
+    <p class="section-lead">Per ciascuna delle 19 pagine: <strong>URL slug, keyword strategiche, sezioni di contenuto, buyer persona target, ruolo nel funnel, CTA principale e interlinking interno</strong>. Le <strong>2 nuove pagine strategiche</strong> aggiunte rispetto alla proposta originale sono evidenziate.</p>
     
     <div class="page-card">
       <div class="page-header-card">
         <div class="page-num-block">
           <span class="page-label">Pagina</span>
           <span class="page-num">01</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Home</h3>
+          <div class="page-meta">
+            <span class="slug">/</span>
+            <span class="funnel-badge">TOFU · Awareness</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>impresa turlione</li>
+<li>asfalti basilicata</li>
+<li>calcestruzzi basilicata</li>
+<li>conglomerato bituminoso baragiano</li></ul>
+          <ul class="sections-list"><li>Hero con headline e tagline brand</li>
+<li>3 macro-aree (Bituminoso · Calcestruzzi · Cementizio)</li>
+<li>Trust strip (24 recensioni 5/5, ANAS, certificazioni)</li>
+<li>Portfolio in evidenza (3-4 cantieri di rilievo)</li>
+<li>Differenziatore: filiera circolare integrata</li>
+<li>CTA preventivo + mappa raggio operativo</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> Tutte e 3 le personas. <strong>Pagina gateway</strong>: deve comunicare in 8 secondi posizionamento, scala industriale e differenziatori</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine principali, CTA prominenti su Prodotti / Contatti</p>
+          <a class="cta-button">Richiedi preventivo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">02</span>
         </div>
         <div class="page-title-block">
           <h3>Azienda</h3>
@@ -562,55 +937,18 @@
           <h4>Keyword &amp; Sezioni</h4>
           <ul class="keyword-list"><li>impresa turlione baragiano</li>
 <li>azienda asfalti basilicata</li>
-<li>storia impresa turlione potenza</li>
-<li>produzione conglomerato bituminoso lucania</li></ul>
+<li>storia impresa turlione</li></ul>
           <ul class="sections-list"><li>Storia dal 2000 e radicamento territoriale</li>
 <li>Mission, valori e visione di filiera circolare</li>
-<li>Sede Z.I. Baragiano Scalo (PZ) e posizione baricentrica</li>
-<li>Team e direzione tecnica</li>
-<li>Parco macchine e investimenti tecnologici</li></ul>
+<li>Sede Z.I. Baragiano Scalo e posizione baricentrica</li>
+<li>Direzione tecnica e team</li>
+<li>Numeri chiave (anni di attività, cantieri, certificazioni)</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> tutte e tre le personas (RUP, General Contractor, Progettisti). Pagina di <strong>trust-building</strong>: racconta l'azienda prima di parlare di servizi, posiziona Turlione come player industriale verticalmente integrato.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Impianti, Filiera &amp; Sostenibilità, Certificazioni, Lavori, Contatti.</p>
-          <a class="cta-button">Scopri chi siamo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-card">
-      <div class="page-header-card">
-        <div class="page-num-block">
-          <span class="page-label">Pagina</span>
-          <span class="page-num">02</span>
-        </div>
-        <div class="page-title-block">
-          <h3>Impianti</h3>
-          <div class="page-meta">
-            <span class="slug">/impianti/</span>
-            <span class="funnel-badge">MOFU · Consideration</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-body">
-        <div class="page-col">
-          <h4>Keyword &amp; Sezioni</h4>
-          <ul class="keyword-list"><li>impianto conglomerato bituminoso basilicata</li>
-<li>impianto calcestruzzo potenza</li>
-<li>impianto riciclo inerti basilicata</li>
-<li>marini MAP 120 E190L impianto asfalto</li></ul>
-          <ul class="sections-list"><li>Impianto Bitumazione — Marini MAP 120 E190L (discontinuo a torre)</li>
-<li>Impianto Calcestruzzi preconfezionato certificato FPC</li>
-<li>Impianto Frantumazione e Recupero Inerti</li>
-<li>Laboratorio interno di controllo qualità</li>
-<li>Tracciabilità di filiera e prove di laboratorio</li></ul>
-        </div>
-        <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> principalmente <strong>Persona 3 (Progettisti)</strong> e <strong>Persona 1 (RUP)</strong>. Pagina <strong>E-E-A-T</strong> per credibilità tecnica: dimostra capacità produttiva reale e tecnologia industriale di riferimento.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Filiera &amp; Sostenibilità, Certificazioni, Lavori.</p>
-          <a class="cta-button">Richiedi una visita tecnica →</a>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> Tutte e 3 le personas. <strong>Pagina trust-building</strong>: racconta l'azienda prima di parlare di servizi</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Parco macchine, Filiera, Certificazioni, Lavori, Contatti</p>
+          <a class="cta-button">Scopri i nostri impianti →</a>
         </div>
       </div>
     </div>
@@ -622,9 +960,9 @@
           <span class="page-num">03</span>
         </div>
         <div class="page-title-block">
-          <h3>Conglomerato Bituminoso</h3>
+          <h3>Parco macchine</h3>
           <div class="page-meta">
-            <span class="slug">/conglomerato-bituminoso/</span>
+            <span class="slug">/azienda/parco-macchine/</span>
             <span class="funnel-badge">MOFU · Consideration</span>
           </div>
         </div>
@@ -632,22 +970,20 @@
       <div class="page-body">
         <div class="page-col">
           <h4>Keyword &amp; Sezioni</h4>
-          <ul class="keyword-list"><li>conglomerato bituminoso basilicata</li>
-<li>conglomerato bituminoso potenza</li>
-<li>conglomerato bituminoso matera</li>
-<li>produzione asfalto basilicata</li></ul>
-          <ul class="sections-list"><li>Tappeti di usura (CB 12.5) — UNI EN 13108-1</li>
-<li>Splittmastix Asphalt (SMA) — UNI EN 13108-5</li>
-<li>Drenante fonoassorbente — UNI EN 13108-7</li>
-<li>Asfalto a freddo (riparazioni e manutenzione)</li>
-<li>Aggregati e materie prime</li>
-<li>Schede tecniche e DOP/CE scaricabili</li></ul>
+          <ul class="keyword-list"><li>parco macchine impresa turlione</li>
+<li>mezzi operativi asfalto basilicata</li>
+<li>flotta cantiere turlione</li></ul>
+          <ul class="sections-list"><li>Inventario mezzi e attrezzature operative</li>
+<li>Frese, vibrofinitrici, autocarri, pompe calcestruzzo</li>
+<li>Politica di rinnovo flotta e manutenzione</li>
+<li>Galleria fotografica mezzi in cantiere</li>
+<li>Tracciabilità e geolocalizzazione flotta</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (General Contractor)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina <strong>hub di cluster</strong>: dialoga con LTR Asphalt sul terreno di gioco principale e introduce le sotto-tipologie di prodotto.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative (bituminoso Potenza/Matera/Basilicata), Impianti, Certificazioni, Filiera, Lavori.</p>
-          <a class="cta-button">Richiedi preventivo conglomerato bituminoso →</a>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (GC)</strong> in fase di valutazione capacità operativa. Persona 1 (RUP) per valutazione idoneità tecnica</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Impianti, Lavori, Azienda</p>
+          <a class="cta-button">Vedi le nostre attività in cantiere →</a>
         </div>
       </div>
     </div>
@@ -659,9 +995,327 @@
           <span class="page-num">04</span>
         </div>
         <div class="page-title-block">
-          <h3>Calcestruzzi</h3>
+          <h3>Filiera &amp; Sostenibilità</h3>
           <div class="page-meta">
-            <span class="slug">/calcestruzzi/</span>
+            <span class="slug">/filiera-sostenibilita/</span>
+            <span class="funnel-badge">TOFU + MOFU</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>filiera circolare asfalto basilicata</li>
+<li>riciclo fresato basilicata</li>
+<li>UNI PdR 88:2020 basilicata</li>
+<li>CAM appalti pubblici</li></ul>
+          <ul class="sections-list"><li>Filiera circolare integrata: cava → produzione → posa → riciclo</li>
+<li>Recupero inerti e Materie Prime Seconde (MPS)</li>
+<li>Riciclo fresato fino al 30% nelle nuove miscele</li>
+<li>Conformità Criteri Ambientali Minimi (CAM)</li>
+<li>Tracciabilità totale di filiera UNI/PdR 88:2020</li>
+<li>Riduzione impronta CO2 e km zero</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 3 (Progettisti)</strong> in capitolato. <strong>Differenziatore competitivo n.1 vs L.T.R. Asphalt</strong></p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Impianti (Frantumazione), tutti i prodotti, Lavori</p>
+          <a class="cta-button">Scopri la nostra filiera →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">05</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Bitumazione (impianto)</h3>
+          <div class="page-meta">
+            <span class="slug">/impianti/bitumazione/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>impianto conglomerato bituminoso basilicata</li>
+<li>marini MAP 120 E190L</li>
+<li>produzione asfalto baragiano</li></ul>
+          <ul class="sections-list"><li>Impianto Marini MAP 120 E190L (discontinuo a torre)</li>
+<li>Capacità produttiva oraria e tracciabilità</li>
+<li>Tipologie di miscele realizzabili</li>
+<li>Controllo qualità in linea di produzione</li>
+<li>Logistica di consegna e tempi</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 3 (Progettisti)</strong> e <strong>Persona 1 (RUP)</strong>. Pagina E-E-A-T per credibilità tecnica industriale</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Prodotti bituminosi, Certificazioni, Filiera, Lavori</p>
+          <a class="cta-button">Richiedi una visita tecnica →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">06</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Frantumazione (impianto)</h3>
+          <div class="page-meta">
+            <span class="slug">/impianti/frantumazione/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>frantumazione inerti basilicata</li>
+<li>riciclo rifiuti edili basilicata</li>
+<li>MPS materie prime seconde</li></ul>
+          <ul class="sections-list"><li>Impianto di frantumazione e recupero inerti</li>
+<li>Trattamento rifiuti da costruzione e demolizione</li>
+<li>Produzione di MPS certificate</li>
+<li>Conformità ambientale e autorizzazioni</li>
+<li>Reintegro fresato nelle nuove miscele</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 2 (GC)</strong> per smaltimento rifiuti di cantiere</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Filiera &amp; Sostenibilità, Aggregati, Certificazioni</p>
+          <a class="cta-button">Conferisci i tuoi inerti →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">07</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Calcestruzzi (impianto)</h3>
+          <div class="page-meta">
+            <span class="slug">/impianti/calcestruzzi/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>impianto calcestruzzo basilicata</li>
+<li>FPC controllo processo calcestruzzo</li>
+<li>produzione calcestruzzo preconfezionato</li></ul>
+          <ul class="sections-list"><li>Impianto calcestruzzo preconfezionato certificato FPC</li>
+<li>Capacità produttiva e mix design</li>
+<li>Laboratorio interno di controllo qualità</li>
+<li>Miscele standard e su misura</li>
+<li>Logistica betoniere e tempi consegna</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 3 (Progettisti)</strong> per specifiche tecniche, <strong>Persona 2 (GC)</strong> per capacità operativa</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Calcestruzzi (prodotto), Conglomerato cementizio, Certificazioni, Lavori</p>
+          <a class="cta-button">Richiedi mix design su misura →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">08</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Conglomerato bituminoso</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/conglomerato-bituminoso/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>conglomerato bituminoso basilicata</li>
+<li>conglomerato bituminoso potenza</li>
+<li>conglomerato bituminoso matera</li></ul>
+          <ul class="sections-list"><li>Cos'è il conglomerato bituminoso (definizione tecnica)</li>
+<li>Tipologie: tappeti d'usura, binder, base</li>
+<li>Norma UNI EN 13108-1 e classi prestazionali</li>
+<li>Catalogo miscele con schede tecniche e DOP</li>
+<li>Applicazioni: strade urbane, extraurbane, ANAS</li>
+<li>Posa diretta e tracciabilità di filiera</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (GC)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina hub di cluster sul terreno di gioco principale vs L.T.R. Asphalt</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Drenante, Splittmastix, Aggregati, Asfalto a freddo, Impianti, Certificazioni</p>
+          <a class="cta-button">Richiedi preventivo conglomerato →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">09</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Drenante</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/drenante/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>asfalto drenante basilicata</li>
+<li>conglomerato drenante UNI EN 13108-7</li>
+<li>tappetino drenante fonoassorbente</li></ul>
+          <ul class="sections-list"><li>Caratteristiche del conglomerato drenante</li>
+<li>Norma UNI EN 13108-7</li>
+<li>Applicazioni: autostrade, viabilità ad alta velocità</li>
+<li>Vantaggi: smaltimento acque, riduzione rumore</li>
+<li>Catalogo miscele e schede tecniche</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare autostradali, <strong>Persona 3 (Progettisti)</strong> per specifiche tecniche</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Conglomerato bituminoso, Splittmastix, Certificazioni</p>
+          <a class="cta-button">Scheda tecnica drenante →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">10</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Splittmastix</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/splittmastix/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>splittmastix asphalt SMA</li>
+<li>SMA UNI EN 13108-5</li>
+<li>tappeto usura ad alta resistenza</li></ul>
+          <ul class="sections-list"><li>Splittmastix Asphalt (SMA): caratteristiche tecniche</li>
+<li>Norma UNI EN 13108-5</li>
+<li>Applicazioni: strade ad alto traffico, pavimentazioni di pregio</li>
+<li>Bitume modificato e prestazioni</li>
+<li>Catalogo miscele e schede tecniche</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 3 (Progettisti)</strong> per pavimentazioni di pregio, <strong>Persona 1 (RUP)</strong> per opere pubbliche</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Conglomerato bituminoso, Drenante, Lavori (case study)</p>
+          <a class="cta-button">Scheda tecnica SMA →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">11</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Aggregati</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/aggregati/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>aggregati per conglomerato bituminoso</li>
+<li>inerti basilicata</li>
+<li>materie prime per asfalto</li></ul>
+          <ul class="sections-list"><li>Tipologie di aggregati prodotti</li>
+<li>Pezzature e granulometrie disponibili</li>
+<li>Conformità norme UNI EN per aggregati stradali</li>
+<li>Origine cava e tracciabilità</li>
+<li>Catalogo prodotti e schede tecniche</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (GC)</strong> e <strong>Persona 3 (Progettisti)</strong> per fornitura inerti</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Frantumazione, Conglomerato bituminoso, Filiera</p>
+          <a class="cta-button">Richiedi listino aggregati →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">12</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Asfalto a freddo</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/asfalto-a-freddo/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>asfalto a freddo basilicata</li>
+<li>riparazione buche asfalto</li>
+<li>manutenzione stradale fai da te</li></ul>
+          <ul class="sections-list"><li>Caratteristiche dell'asfalto a freddo</li>
+<li>Applicazioni: manutenzione, riparazione buche, piccoli interventi</li>
+<li>Confezionamento e modalità di posa</li>
+<li>Vantaggi: pronto all'uso, no impianto</li>
+<li>Catalogo prodotti e formati</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 2 (GC)</strong> e operatori manutenzione stradale. Pubblico più ampio (anche piccole imprese)</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Conglomerato bituminoso, Lavori manutenzione</p>
+          <a class="cta-button">Richiedi listino asfalto a freddo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">13</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Calcestruzzi (prodotto)</h3>
+          <div class="page-meta">
+            <span class="slug">/prodotti/calcestruzzi/</span>
             <span class="funnel-badge">MOFU · Consideration</span>
           </div>
         </div>
@@ -676,14 +1330,14 @@
           <ul class="sections-list"><li>Calcestruzzo preconfezionato — classi UNI EN 206</li>
 <li>Calcestruzzo CAM (Criteri Ambientali Minimi)</li>
 <li>Calcestruzzo per opere strutturali e fondazioni</li>
-<li>Certificazione FPC (Controllo Processo Produzione)</li>
 <li>Miscele su misura per capitolato</li>
-<li>Schede tecniche e prove di laboratorio scaricabili</li></ul>
+<li>Schede tecniche e prove di laboratorio scaricabili</li>
+<li>Sezioni territoriali (Potenza, Matera, Basilicata) per SEO geo</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 2 (GC)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina ad <strong>altissimo valore SEO</strong>: cluster scoperto da L.T.R. Asphalt, finestra di posizionamento 4-6 mesi.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative (calcestruzzi Potenza/Matera/Basilicata), Conglomerato cementizio, Impianti, Certificazioni.</p>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 2 (GC)</strong> e <strong>Persona 3 (Progettisti)</strong>. Pagina ad <strong>altissimo valore SEO</strong>: cluster scoperto da L.T.R. Asphalt</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Conglomerato cementizio, Impianto calcestruzzi, Certificazioni, Lavori</p>
           <a class="cta-button">Richiedi preventivo calcestruzzo →</a>
         </div>
       </div>
@@ -693,12 +1347,12 @@
       <div class="page-header-card">
         <div class="page-num-block">
           <span class="page-label">Pagina</span>
-          <span class="page-num">05</span>
+          <span class="page-num">14</span>
         </div>
         <div class="page-title-block">
-          <h3>Conglomerato Cementizio</h3>
+          <h3>Conglomerato cementizio<span class="new-badge-card">NUOVA</span></h3>
           <div class="page-meta">
-            <span class="slug">/conglomerato-cementizio/</span>
+            <span class="slug">/prodotti/conglomerato-cementizio/</span>
             <span class="funnel-badge">MOFU · Consideration</span>
           </div>
         </div>
@@ -715,12 +1369,12 @@
 <li>Applicazioni: opere stradali, pavimentazioni industriali, idrauliche</li>
 <li>Conformità CAM e UNI/PdR 88:2020</li>
 <li>Miscele progettate su capitolato</li>
-<li>Supporto consulenziale a progettisti e RUP</li></ul>
+<li>Sezioni territoriali (Potenza, Matera, Basilicata) per SEO geo</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong> in fase di stesura capitolato. Pagina <strong>differenziale</strong>: territorio digitalmente vergine, nessun competitor regionale presidia il cluster.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Aree Operative, Calcestruzzi, Impianti, Certificazioni, Progettisti &amp; RUP.</p>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong> in fase di stesura capitolato. <strong>Pagina nuova ad altissimo valore SEO</strong>: territorio digitalmente vergine</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Calcestruzzi, Certificazioni, Area Tecnica, Filiera</p>
           <a class="cta-button">Richiedi consulenza tecnica →</a>
         </div>
       </div>
@@ -730,118 +1384,7 @@
       <div class="page-header-card">
         <div class="page-num-block">
           <span class="page-label">Pagina</span>
-          <span class="page-num">06</span>
-        </div>
-        <div class="page-title-block">
-          <h3>Aree Operative</h3>
-          <div class="page-meta">
-            <span class="slug">/aree-operative/</span>
-            <span class="funnel-badge">MOFU · Consideration</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-body">
-        <div class="page-col">
-          <h4>Keyword &amp; Sezioni</h4>
-          <ul class="keyword-list"><li>asfalti basilicata fornitore</li>
-<li>calcestruzzo basilicata produttore</li>
-<li>fornitore conglomerato bituminoso potenza matera</li>
-<li>raggio operativo asfalti Sud Italia</li></ul>
-          <ul class="sections-list"><li>Mappa raggio operativo (Baragiano + 100 km)</li>
-<li>Hub Potenza con 3 landing dedicate (bituminoso/calcestruzzi/cementizio)</li>
-<li>Hub Matera con 2 landing dedicate (asfalti/calcestruzzi)</li>
-<li>Overview regionale Basilicata</li>
-<li>Tempi di consegna e logistica</li>
-<li>Cantieri in corso per area</li></ul>
-        </div>
-        <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> tutte le personas. Pagina <strong>gateway al posizionamento geo-SEO</strong>: ospita 10 landing geo-localizzate, cuore della strategia di conquista delle SERP locali.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Lavori, Contatti, Cantieri in corso.</p>
-          <a class="cta-button">Verifica la copertura del tuo cantiere →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-card">
-      <div class="page-header-card">
-        <div class="page-num-block">
-          <span class="page-label">Pagina</span>
-          <span class="page-num">07</span>
-        </div>
-        <div class="page-title-block">
-          <h3>Lavori</h3>
-          <div class="page-meta">
-            <span class="slug">/lavori/</span>
-            <span class="funnel-badge">MOFU · Consideration</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-body">
-        <div class="page-col">
-          <h4>Keyword &amp; Sezioni</h4>
-          <ul class="keyword-list"><li>lavori ANAS basilicata</li>
-<li>portfolio asfaltatura potenza</li>
-<li>opere stradali basilicata realizzazioni</li>
-<li>case study cantieri turlione</li></ul>
-          <ul class="sections-list"><li>Opere pubbliche: ANAS SS 658, SS 407, RA 05, A2 Mediterraneo, SS 172 dei Trulli</li>
-<li>Opere private: Centro Commerciale Auchan, Ferrero, Ospedale San Carlo</li>
-<li>Case study con foto, descrizione tecnica, miscela utilizzata</li>
-<li>Galleria fotografica e video drone</li>
-<li>Filtri per tipologia (pubblico/privato, asfalto/calcestruzzo, territorio)</li>
-<li>Mappa interattiva dei cantieri realizzati</li></ul>
-        </div>
-        <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 2 (GC)</strong>. Pagina di <strong>prova sociale e referenze</strong>: il portafoglio ANAS è l'asset di trust più forte di Turlione, oggi invisibile sul sito attuale.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Aree Operative, Filiera &amp; Sostenibilità, Certificazioni.</p>
-          <a class="cta-button">Esplora il portfolio completo →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-card">
-      <div class="page-header-card">
-        <div class="page-num-block">
-          <span class="page-label">Pagina</span>
-          <span class="page-num">08</span>
-        </div>
-        <div class="page-title-block">
-          <h3>Filiera &amp; Sostenibilità</h3>
-          <div class="page-meta">
-            <span class="slug">/filiera-sostenibilita/</span>
-            <span class="funnel-badge">TOFU + MOFU</span>
-          </div>
-        </div>
-      </div>
-      <div class="page-body">
-        <div class="page-col">
-          <h4>Keyword &amp; Sezioni</h4>
-          <ul class="keyword-list"><li>filiera circolare asfalto basilicata</li>
-<li>riciclo fresato basilicata</li>
-<li>UNI PdR 88:2020 conglomerato bituminoso</li>
-<li>CAM appalti pubblici basilicata</li></ul>
-          <ul class="sections-list"><li>Filiera circolare integrata: cava → produzione → posa → riciclo</li>
-<li>Recupero inerti e Materie Prime Seconde (MPS)</li>
-<li>Riciclo fresato fino al 30% nelle nuove miscele</li>
-<li>Conformità Criteri Ambientali Minimi (CAM)</li>
-<li>Tracciabilità totale di filiera UNI/PdR 88:2020</li>
-<li>Riduzione impronta CO2 e km zero</li></ul>
-        </div>
-        <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per gare CAM, <strong>Persona 3 (Progettisti)</strong> in capitolato. <strong>Differenziatore competitivo n.1</strong> verso L.T.R. Asphalt: filiera circolare reale, non solo dichiarata.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Impianti, Calcestruzzi, Cementizio, Bituminoso, Lavori.</p>
-          <a class="cta-button">Scopri la nostra filiera →</a>
-        </div>
-      </div>
-    </div>
-
-    <div class="page-card">
-      <div class="page-header-card">
-        <div class="page-num-block">
-          <span class="page-label">Pagina</span>
-          <span class="page-num">09</span>
+          <span class="page-num">15</span>
         </div>
         <div class="page-title-block">
           <h3>Certificazioni</h3>
@@ -856,19 +1399,18 @@
           <h4>Keyword &amp; Sezioni</h4>
           <ul class="keyword-list"><li>UNI PdR 88:2020 basilicata</li>
 <li>FPC certificazione calcestruzzo</li>
-<li>certificazione CAM asfalto basilicata</li>
+<li>certificazione CAM asfalto</li>
 <li>DOP marcatura CE conglomerato</li></ul>
           <ul class="sections-list"><li>UNI/PdR 88:2020 — sostenibilità filiera bituminoso</li>
-<li>FPC — Controllo del Processo di Produzione in Fabbrica (calcestruzzo)</li>
+<li>FPC — Controllo Produzione in Fabbrica calcestruzzo</li>
 <li>Conformità CAM per appalti pubblici</li>
-<li>DOP e marcatura CE scaricabili per ogni miscela</li>
-<li>Documentazione di gara pronta all'uso</li>
-<li>Eventuali certificazioni ISO (da verificare con cliente)</li></ul>
+<li>DOP e marcatura CE scaricabili</li>
+<li>Documentazione di gara pronta all'uso</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per documentazione di gara. Pagina <strong>E-E-A-T cruciale</strong>: trasparenza sulla conformità normativa = credibilità immediata in fase di prequalifica.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutte le pagine prodotto, Filiera &amp; Sostenibilità, Progettisti &amp; RUP, Lavori.</p>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> per documentazione di gara. <strong>E-E-A-T cruciale</strong>: trasparenza sulla conformità = credibilità immediata</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutti i prodotti, Filiera, Area Tecnica, Lavori</p>
           <a class="cta-button">Scarica le certificazioni →</a>
         </div>
       </div>
@@ -878,12 +1420,83 @@
       <div class="page-header-card">
         <div class="page-num-block">
           <span class="page-label">Pagina</span>
-          <span class="page-num">10</span>
+          <span class="page-num">16</span>
         </div>
         <div class="page-title-block">
-          <h3>Progettisti &amp; RUP</h3>
+          <h3>Lavori (catalogo)</h3>
           <div class="page-meta">
-            <span class="slug">/progettisti-rup/</span>
+            <span class="slug">/lavori/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>lavori ANAS basilicata</li>
+<li>portfolio asfaltatura potenza</li>
+<li>opere stradali realizzazioni basilicata</li></ul>
+          <ul class="sections-list"><li>Opere pubbliche: ANAS, Province, Comuni</li>
+<li>Opere private: centri commerciali, aree industriali, hospitality</li>
+<li>Case study con foto, descrizione tecnica, miscela utilizzata</li>
+<li>Filtri per tipologia, territorio, anno</li>
+<li>Mappa interattiva dei cantieri realizzati</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 2 (GC)</strong>. Pagina di <strong>prova sociale e referenze</strong></p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Tutti i prodotti, Certificazioni, Filiera</p>
+          <a class="cta-button">Esplora il portfolio completo →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">17</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Video</h3>
+          <div class="page-meta">
+            <span class="slug">/video/</span>
+            <span class="funnel-badge">MOFU · Consideration</span>
+          </div>
+        </div>
+      </div>
+      <div class="page-body">
+        <div class="page-col">
+          <h4>Keyword &amp; Sezioni</h4>
+          <ul class="keyword-list"><li>video cantieri impresa turlione</li>
+<li>drone impianto baragiano</li>
+<li>impianto marini video</li></ul>
+          <ul class="sections-list"><li>Drone view degli impianti e dei cantieri</li>
+<li>Walk-through impianto Marini MAP 120 E190L</li>
+<li>Time-lapse della posa di asfalto</li>
+<li>Processo di riciclo fresato e MPS</li>
+<li>Embed dal canale YouTube ufficiale</li>
+<li>Categorizzazione per tipo di intervento</li></ul>
+        </div>
+        <div class="page-col">
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> Tutte e 3 le personas. <strong>Asset visivo trasversale</strong>: rinforza E-E-A-T tecnico e aumenta tempo di permanenza</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Lavori, Impianti, Prodotti, Blog</p>
+          <a class="cta-button">Iscriviti al canale YouTube →</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="page-card">
+      <div class="page-header-card">
+        <div class="page-num-block">
+          <span class="page-label">Pagina</span>
+          <span class="page-num">18</span>
+        </div>
+        <div class="page-title-block">
+          <h3>Area Tecnica<span class="new-badge-card">NUOVA</span></h3>
+          <div class="page-meta">
+            <span class="slug">/area-tecnica/</span>
             <span class="funnel-badge">BOFU · Decision</span>
           </div>
         </div>
@@ -893,8 +1506,7 @@
           <h4>Keyword &amp; Sezioni</h4>
           <ul class="keyword-list"><li>schede tecniche conglomerato bituminoso</li>
 <li>DOP asfalto basilicata download</li>
-<li>capitolato calcestruzzo CAM basilicata</li>
-<li>consulenza pre-cantiere progettisti</li></ul>
+<li>capitolato calcestruzzo CAM</li></ul>
           <ul class="sections-list"><li>Schede tecniche scaricabili (per ogni miscela)</li>
 <li>DOP e marcatura CE in formato PDF</li>
 <li>Capitolati tipo per gare pubbliche</li>
@@ -903,9 +1515,9 @@
 <li>Contatto diretto con laboratorio interno</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong>. Canale di <strong>conversione B2B prequalifica</strong> oggi non presidiato dai competitor: pagina trasforma l'ufficio tecnico Turlione in partner consulenziale.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Filiera, tutte le pagine prodotto, Contatti.</p>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> <strong>Persona 1 (RUP)</strong> e <strong>Persona 3 (Progettisti)</strong>. <strong>Pagina nuova</strong>: canale di conversione B2B prequalifica oggi non presidiato dai competitor</p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Certificazioni, Filiera, tutti i prodotti, Contatti</p>
           <a class="cta-button">Richiedi documentazione tecnica →</a>
         </div>
       </div>
@@ -915,7 +1527,7 @@
       <div class="page-header-card">
         <div class="page-num-block">
           <span class="page-label">Pagina</span>
-          <span class="page-num">11</span>
+          <span class="page-num">19</span>
         </div>
         <div class="page-title-block">
           <h3>Contatti</h3>
@@ -930,19 +1542,17 @@
           <h4>Keyword &amp; Sezioni</h4>
           <ul class="keyword-list"><li>contatti impresa turlione baragiano</li>
 <li>preventivo asfalto basilicata</li>
-<li>telefono impresa turlione potenza</li>
-<li>indirizzo turlione baragiano</li></ul>
-          <ul class="sections-list"><li>Form richiesta preventivo (asfalto/calcestruzzo/cementizio)</li>
-<li>Indirizzo sede + mappa interattiva (Z.I. Baragiano Scalo, PZ)</li>
-<li>Telefono diretto + WhatsApp Business</li>
-<li>Email commerciale + amministrativa</li>
+<li>telefono impresa turlione</li></ul>
+          <ul class="sections-list"><li>Form richiesta preventivo (bituminoso/calcestruzzo/cementizio)</li>
+<li>Indirizzo sede + mappa interattiva (Z.I. Baragiano Scalo)</li>
+<li>Telefono diretto + email commerciale e amministrativa</li>
 <li>Orari di apertura uffici</li>
-<li>Sezione Cantieri in corso (mappa attiva)</li></ul>
+<li>Sezione cantieri in corso (mappa attiva)</li></ul>
         </div>
         <div class="page-col">
-          <h4>Persona target &amp; CTA</h4>
-          <p class="persona-text"><strong>Persona principale:</strong> tutte le personas in fase decisionale. <strong>Pagina di conversione finale</strong>: ogni euro speso in SEO, Ads, content e PR converge qui.</p>
-          <p class="interlink-text"><strong>Interlinking interno:</strong> Footer di tutte le pagine, CTA principali, sticky-button mobile.</p>
+          <h4>Persona target &amp; Interlinking</h4>
+          <p class="persona-text"><strong>Persona principale:</strong> Tutte le personas in fase decisionale. <strong>Pagina di conversione finale</strong></p>
+          <p class="interlink-text"><strong>Interlinking interno:</strong> Footer di tutte le pagine, CTA principali, sticky-button mobile</p>
           <a class="cta-button">Richiedi preventivo →</a>
         </div>
       </div>
@@ -953,7 +1563,7 @@
   <!-- 3. BLOG -->
   <div class="section">
     <h2 class="section-title">Blog editoriale</h2>
-    <p class="section-lead">Sezione editoriale <strong>aggiuntiva</strong> rispetto alle 11 pagine commerciali. Asset SEO long-tail, traffico continuativo, backlink istituzionali, posizionamento autorevole sulle ricerche informazionali del bacino RUP / progettisti / general contractor.</p>
+    <p class="section-lead">Sezione editoriale <strong>aggiuntiva</strong> rispetto alle 19 pagine commerciali. Asset SEO long-tail, traffico continuativo, backlink istituzionali, posizionamento autorevole sulle ricerche informazionali del bacino RUP / progettisti / general contractor.</p>
 
     <div class="blog-intro">
       <h3>Blog — Materiali, Filiera, Cantieri</h3>
@@ -962,35 +1572,34 @@
     </div>
 
     <div class="blog-grid">
-      
     <div class="blog-cat">
       <div class="blog-letter">T</div>
       <h4>Tecniche &amp; Materiali</h4>
-      <p>Schede tecniche, differenze tra miscele, norme UNI EN, focus prodotto. Tono divulgativo per progettisti e RUP.</p>
+      <p>Schede tecniche, differenze tra miscele, norme UNI EN, focus prodotto</p>
     </div>
 
     <div class="blog-cat">
       <div class="blog-letter">C</div>
       <h4>CAM &amp; Appalti</h4>
-      <p>Guide ai Criteri Ambientali Minimi, novità Codice Appalti, opportunità PNRR, prequalifiche tecniche.</p>
+      <p>Guide ai Criteri Ambientali Minimi, novità Codice Appalti, opportunità PNRR</p>
     </div>
 
     <div class="blog-cat">
       <div class="blog-letter">F</div>
       <h4>Filiera Circolare</h4>
-      <p>Riciclo fresato, MPS, sostenibilità di filiera, tracciabilità, riduzione impronta CO2.</p>
+      <p>Riciclo fresato, MPS, sostenibilità di filiera, riduzione CO2</p>
     </div>
 
     <div class="blog-cat">
       <div class="blog-letter">R</div>
       <h4>Realizzazioni &amp; Cantieri</h4>
-      <p>Case study di cantieri ANAS e privati, dietro le quinte produzione, drone view degli impianti.</p>
+      <p>Case study ANAS e privati, dietro le quinte produzione, drone view</p>
     </div>
 
     <div class="blog-cat">
       <div class="blog-letter">N</div>
       <h4>News &amp; Eventi</h4>
-      <p>Settore costruzioni, fiere SAIE Bari, formazione, novità normative.</p>
+      <p>Settore costruzioni, fiere SAIE, formazione, novità normative</p>
     </div>
 
     </div>
@@ -1016,7 +1625,7 @@
       <div class="spec-box">
         <h4>Meta tag obbligatori</h4>
         <ul>
-          <li><strong>Title</strong> 55-65 caratteri (con località per landing geo)</li>
+          <li><strong>Title</strong> 55-65 caratteri (con località per pagine geo)</li>
           <li><strong>Meta description</strong> 150-160 con CTA</li>
           <li><strong>H1 unico</strong> per pagina</li>
           <li>Open Graph per social sharing</li>
@@ -1066,6 +1675,16 @@
           <li>Trasparenza appalti (L. 124/2017)</li>
           <li>Termini e condizioni B2B</li>
         </ul>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+      <h4>Pagine legali nel footer (non contate nelle 19, obbligatorie per legge)</h4>
+      <div class="footer-legal-grid">
+        <div class="legal-item">Privacy Policy</div>
+        <div class="legal-item">Cookie Policy</div>
+        <div class="legal-item">Note legali (art. 2250 c.c.)</div>
+        <div class="legal-item">Trasparenza appalti (L. 124/2017)</div>
       </div>
     </div>
   </div>
